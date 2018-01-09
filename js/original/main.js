@@ -9,11 +9,12 @@
 /* global r*/
 
 if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+var scene;
 var increase=0;
 
 function world_field(){
     //シーン作成
-    var scene = new THREE.Scene();
+    scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(
             75, window.innerWidth / window.innerHeight, 0.1, 2000 );
     camera.position.x=0;
