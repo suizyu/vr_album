@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/three.min.js"></script>
+  <script type="text/javascript" src="js/Detector.js"></script>
+  <script type="text/javascript" src="js/vr/VRControls.js"></script>
+  <script type="text/javascript" src="js/vr/VREffect.js"></script>
+  <script type="text/javascript" src="js/vr/webvr-polyfill.js"></script>
+  <script type="text/javascript" src="js/vr/webvr-manager.js"></script>  
+  <script type="text/javascript" src="js/original/main.js"></script>
+  <script type="text/javascript" src="js/original/search.js"></script>
+  <link rel="stylesheet" href="album_style.css" type="text/css"/>
+  <link rel="stylesheet" href="js/font/font_style/style.css" type="text/css" />
+  <script>
+    /* global $ */
+    /* global world_field */
+    /* global search_photo */
+    $(function() {
+      //three.js
+      world_field();
+      
+      //ボタンが押されたら
+      $('#searchButton').on('click touchstart',function(){
+        //処理
+        search_photo();
+      });
+      
+    });
+  </script>
+  <body>
+    <div id="wrapper">
+  		<div id="searchPanel">
+    		<input type="text" id="searchBox" />
+    		<span class="icon-search" style="font-size: 2em;" id="searchButton"></span>
+    		<div id="result-box"><p>検索ワードが表示されます</p></div>
+      </div>
+    </div>
+  </body>
+</html>
